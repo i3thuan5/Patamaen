@@ -2,3 +2,17 @@
 	background-color: green;
 	color: white;
 }
+
+#intro .jumbotron{
+	height: 70vh;
+	margin-bottom: 0px;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+p,a,input,label,textarea,span,ul,li{
+    font-family: 'Open Sans', sans-serif;
+
+}
