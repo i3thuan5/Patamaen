@@ -1,10 +1,10 @@
 version: '3.7'
 
 services:
-  gunicorn:
-    build:
-      context: ./patamaen
-      dockerfile: Dockerfile-pasadaken
+  nginx:
+    build: ./nginx
+    volumes:
+      - "staticfilesn:/staticfiles:ro"
     networks:
       - default
       - nginx-bridge
@@ -13,6 +13,16 @@ services:
       - LETSENCRYPT_HOST=${VIRTUAL_HOST:-pisalofan.ithuan.tw}
       - LETSENCRYPT_EMAIL=ithuan@ithuan.tw
     restart: always
+  patamaen-gunicorn:
+    build:
+      context: ./patamaen
+      dockerfile: Dockerfile-pasadaken
+    volumes:
+      - "staticfiles:/staticfiles:ro"
+    restart: always
+
+volumes:
+  staticfiles:
 
 networks:
   nginx-bridge:

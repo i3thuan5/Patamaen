@@ -6,5 +6,5 @@ RUN pip install gunicorn
 COPY . .
 
 EXPOSE 8000
-# CMD python manage.py runserver 0.0.0.0:8000
-CMD gunicorn patamaen.wsgi -b 0.0.0.0:8000
+CMD python manage.py collectstatic --noinput --clear && \
+  gunicorn patamaen.wsgi -b 0.0.0.0:8000
