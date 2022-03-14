@@ -4,7 +4,7 @@ services:
   nginx:
     build: ./nginx
     volumes:
-      - "staticfilesn:/staticfiles:ro"
+      - "staticfiles:/staticfiles:ro"
     networks:
       - default
       - nginx-bridge
@@ -18,7 +18,7 @@ services:
       context: ./patamaen
       dockerfile: Dockerfile-pasadaken
     volumes:
-      - "staticfiles:/staticfiles:ro"
+      - "staticfiles:/staticfiles:rw"
     restart: always
 
 volumes:
