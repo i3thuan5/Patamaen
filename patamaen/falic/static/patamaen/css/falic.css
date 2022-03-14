@@ -1,6 +1,10 @@
 .cakatama {
-	background-color: green;
-	color: white;
+	background-color: #ffb0b0;
+	color: black;
+}
+
+#masalofay{
+	font-size: 20px;
 }
 
 #intro .jumbotron{
@@ -14,5 +18,34 @@ h1,h2,h3,h4,h5,h6{
 
 p,a,input,label,textarea,span,ul,li{
     font-family: 'Open Sans', sans-serif;
+}
 
+#intro h1{
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #7cad53;
+}
+
+#intro h2{
+    font-size: 26px;
+    font-weight: 200;
+    line-height: 1.5;
+    color: rgb(125, 125, 125);
+}
+textarea{
+	color: rgb(125, 125, 125);
+	width: 500px;
+	height: 100px;
+}
+
+.btn {
+    background: #98c96f;
+    color: white;
+    padding: 9px 26px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+#caaykatama{
+	color: red;
 }
