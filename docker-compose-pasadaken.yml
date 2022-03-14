@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  gunicorn:
+    build:
+      context: ./patamaen
+      dockerfile: Dockerfile-pasadaken
+    environment:
+      - VIRTUAL_HOST=${VIRTUAL_HOST:-pisalofan.ithuan.tw}
+      - LETSENCRYPT_HOST=${VIRTUAL_HOST:-pisalofan.ithuan.tw}
+      - LETSENCRYPT_EMAIL=ithuan@ithuan.tw
+    restart: always
+
+networks:
+  nginx-bridge:
+    external: true
