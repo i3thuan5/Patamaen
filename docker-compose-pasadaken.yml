@@ -5,6 +5,9 @@ services:
     build:
       context: ./patamaen
       dockerfile: Dockerfile-pasadaken
+    networks:
+      - default
+      - nginx-bridge
     environment:
       - VIRTUAL_HOST=${VIRTUAL_HOST:-pisalofan.ithuan.tw}
       - LETSENCRYPT_HOST=${VIRTUAL_HOST:-pisalofan.ithuan.tw}
