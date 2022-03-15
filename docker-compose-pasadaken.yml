@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  nginx:
+    build: ./nginx
+    volumes:
+      - "staticfiles:/staticfiles:ro"
+    networks:
+      - default
+      - nginx-bridge
+    environment:
+      - VIRTUAL_HOST=${VIRTUAL_HOST:-pisalofan.ithuan.tw}
+      - LETSENCRYPT_HOST=${VIRTUAL_HOST:-pisalofan.ithuan.tw}
+      - LETSENCRYPT_EMAIL=ithuan@ithuan.tw
+    restart: always
+  patamaen-gunicorn:
+    build:
+      context: ./patamaen
+      dockerfile: Dockerfile-pasadaken
+    environment:
+      - DJANGO_SETTINGS_MODULE=patamaen.settings-pasadaken
+    volumes:
+      - "staticfiles:/staticfiles:rw"
+    restart: always
+
+volumes:
+  staticfiles:
+
+networks:
+  nginx-bridge:
+    external: true
