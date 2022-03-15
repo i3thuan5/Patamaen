@@ -17,6 +17,8 @@ services:
     build:
       context: ./patamaen
       dockerfile: Dockerfile-pasadaken
+    environment:
+      - DJANGO_SETTINGS_MODULE=patamaen.settings-pasadaken
     volumes:
       - "staticfiles:/staticfiles:rw"
     restart: always
