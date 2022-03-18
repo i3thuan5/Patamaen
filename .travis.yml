@@ -1,0 +1,8 @@
+dist: focal
+language: python
+python:
+- '3.8'
+install:
+- pip install flake8
+script:
+- flake8 patamaen
