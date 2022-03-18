@@ -37,11 +37,20 @@
         <section>
           <div class="row"> 
             <div class="col-md-8 offset-md-2 text-center">
-              <textarea class="form-control" >nga'ay ho,komaen kiso haw?</textarea>
+              <textarea class="form-control" >{{ sentence }}</textarea>
               <br>
               <br>
-              <p id= masalofay><span class='cakatama'>N</span>ga'ay ho<del class='cakatama' id ='caaykatama'> 
-              </del>,<span class="cakatama"> </span>komaen kiso haw?</p>
+              <p id="masalofay">
+                {% spaceless %}
+                  {% for codad in matamaay %}
+                    {% if codad.2 == ' ' %}
+                      <{{ codad.0 }} class="{{ codad.1 }}">&nbsp;</{{ codad.0 }}>
+                    {% else %}
+                      <{{ codad.0 }} class="{{ codad.1 }}">{{ codad.2 }}</{{ codad.0 }}>
+                    {% endif %}
+                  {% endfor %}
+                {% endspaceless %}
+              </p>
               <br>
              <button type="button" class="btn btn-success position-relative">Salofen
              </button>
