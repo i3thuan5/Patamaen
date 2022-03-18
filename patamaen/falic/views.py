@@ -10,16 +10,23 @@ def falic(request):
     dmp = dmp_module.diff_match_patch()
     diff = dmp.diff_main(sasalofen, nisalofan)
 
-    print(diff)
-    diff = [
-        (-1, 'n'),
-        (1, 'N'),
-        (0, "ga'ay ho"), 
-        (-1, ' '), 
-        (0, ','), 
-        (1, ' '), 
-        (0, 'komaen kiso haw?')
-    ]
+    # diff = [
+    #     (-1, 'n'),
+    #     (1, 'N'),
+    #     (0, "ga'ay ho"), 
+    #     (-1, ' '), 
+    #     (0, ','), 
+    #     (1, ' '), 
+    #     (0, 'komaen kiso haw?')
+    # ]
+    # [
+    #     ('span', 'cakatama', 'N'),
+    #     ('span', '', "ga'ay ho"),
+    #     ('del', 'caaykatama', html.escape(' ')),
+    #     ('span', '', ','),
+    #     ('span', 'cakatama', html.escape(' ')),
+    #     ('span', '', 'komaen kiso haw?'),
+    # ]
     nisalofan = []
     for codad in diff:
         if codad[0] == -1:
@@ -36,7 +43,6 @@ def falic(request):
                 ('span', 'cakatama', codad[1])
             )
 
-
     return render(
         request,
         template_name='patamaen/falic.html',
@@ -45,11 +51,3 @@ def falic(request):
             'nisalofan': nisalofan,
         },
     )
-    # [
-    #             ('span', 'cakatama', 'N'),
-    #             ('span', '', "ga'ay ho"),
-    #             ('del', 'caaykatama', html.escape(' ')),
-    #             ('span', '', ','),
-    #             ('span', 'cakatama', html.escape(' ')),
-    #             ('span', '', 'komaen kiso haw?'),
-    #         ]
