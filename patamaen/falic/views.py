@@ -7,8 +7,8 @@ def falic(request):
         request,
         template_name='patamaen/falic.html',
         context={
-            'sentence': "Tomay nga'ay ho,komaen kiso haw?",
-            'matamaay': [
+            'sasalofen': "Tomay nga'ay ho,komaen kiso haw?",
+            'nisalofan': [
                 ('span', 'cakatama', 'N'),
                 ('span', '', "ga'ay ho"),
                 ('del', 'caaykatama', html.escape(' ')),
