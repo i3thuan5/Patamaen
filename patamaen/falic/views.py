@@ -1,5 +1,4 @@
 from django.shortcuts import render
-import html
 import diff_match_patch as dmp_module
 
 
@@ -13,10 +12,10 @@ def falic(request):
     # diff = [
     #     (-1, 'n'),
     #     (1, 'N'),
-    #     (0, "ga'ay ho"), 
-    #     (-1, ' '), 
-    #     (0, ','), 
-    #     (1, ' '), 
+    #     (0, "ga'ay ho"),
+    #     (-1, ' '),
+    #     (0, ','),
+    #     (1, ' '),
     #     (0, 'komaen kiso haw?')
     # ]
     # [
