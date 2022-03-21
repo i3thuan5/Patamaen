@@ -9,7 +9,7 @@ def falic(request):
     # "Nga'ay ho, komaen kiso haw?"
     nisalofan = sasalofen[0].upper() + sasalofen[1:]
     nisalofan = nisalofan.replace(' ,', ',')
-    
+
     # nisalofan = nisalofan.replace(',k', ', k')
     nisalofan = re.sub('(,)([a-zA-Z])', pahanhanan, nisalofan)
 
