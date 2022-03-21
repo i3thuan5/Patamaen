@@ -8,6 +8,7 @@ def falic(request):
     # "Nga'ay ho, komaen kiso haw?"
     nisalofan = sasalofen[0].upper() + sasalofen[1:]
     nisalofan = nisalofan.replace(' ,', ',')
+    nisalofan = nisalofan.replace(',k', ', k')
 
     dmp = dmp_module.diff_match_patch()
     diff = dmp.diff_main(sasalofen, nisalofan)
