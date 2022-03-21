@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import diff_match_patch as dmp_module
+import re
 
 
 def falic(request):
@@ -8,7 +9,9 @@ def falic(request):
     # "Nga'ay ho, komaen kiso haw?"
     nisalofan = sasalofen[0].upper() + sasalofen[1:]
     nisalofan = nisalofan.replace(' ,', ',')
-    nisalofan = nisalofan.replace(',k', ', k')
+    
+    # nisalofan = nisalofan.replace(',k', ', k')
+    nisalofan = re.sub('(,)([a-zA-Z])', pahanhanan, nisalofan)
 
     dmp = dmp_module.diff_match_patch()
     diff = dmp.diff_main(sasalofen, nisalofan)
@@ -54,3 +57,7 @@ def falic(request):
             'nisalofan': nisalofan,
         },
     )
+
+
+def pahanhanan(matama):
+    return matama.group(1) + ' ' + matama.group(2)
