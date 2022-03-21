@@ -4,7 +4,10 @@ import diff_match_patch as dmp_module
 
 def falic(request):
     sasalofen = "nga'ay ho ,komaen kiso haw?"
-    nisalofan = "Nga'ay ho, komaen kiso haw?"
+    # 字首大寫
+    # "Nga'ay ho, komaen kiso haw?"
+    nisalofan = sasalofen[0].upper() + sasalofen[1:]
+    nisalofan = nisalofan.replace(' ,', ',')
 
     dmp = dmp_module.diff_match_patch()
     diff = dmp.diff_main(sasalofen, nisalofan)
