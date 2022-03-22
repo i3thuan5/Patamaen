@@ -6,7 +6,7 @@ services:
       context: ./patamaen
       dockerfile: Dockerfile-behave
     volumes:
-      - "./behave_steps_too/:/behave_steps"
+      - "./behave_steps/:/behave_steps"
       - "./patamaen/:/patamaen/:ro"
     environment:
       - DJANGO_SETTINGS_MODULE=patamaen.settings-behave
