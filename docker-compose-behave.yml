@@ -3,12 +3,13 @@ version: '3.7'
 services:
   patamaen-django:
     build: 
-      context: ./autuan
+      context: ./patamaen
       dockerfile: Dockerfile-behave
     volumes:
       - "./behave_steps_too/:/behave_steps"
+      - "./patamaen/:/patamaen/:ro"
     environment:
-      - DJANGO_SETTINGS_MODULE=autuan.settings-behave
+      - DJANGO_SETTINGS_MODULE=patamaen.settings-behave
   chrome-selenium:
     image: selenium/standalone-chrome-debug:3.141.59
     ports: 
