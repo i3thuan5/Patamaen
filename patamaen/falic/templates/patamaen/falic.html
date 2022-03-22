@@ -37,24 +37,27 @@
         <section>
           <div class="row"> 
             <div class="col-md-8 offset-md-2 text-center">
-              {{ form }}
-              <br>
-              <br>
-              <p id="masalofay">
-                {% spaceless %}
-                  {% for codad in nisalofan %}
-                    {% if codad.2 == ' ' %}
-                      <{{ codad.0 }} class="{{ codad.1 }}">&nbsp;</{{ codad.0 }}>
-                    {% else %}
-                      <{{ codad.0 }} class="{{ codad.1 }}">{{ codad.2 }}</{{ codad.0 }}>
-                    {% endif %}
-                  {% endfor %}
-                {% endspaceless %}
-              </p>
-              <br>
-             <button type="submit" class="btn btn-success position-relative">Salofen
-             </button>
-          </div>
+              <form method="post">
+                {% csrf_token %}
+                {{ form }}
+                <br>
+                <br>
+                <p id="masalofay">
+                  {% spaceless %}
+                    {% for codad in nisalofan %}
+                      {% if codad.2 == ' ' %}
+                        <{{ codad.0 }} class="{{ codad.1 }}">&nbsp;</{{ codad.0 }}>
+                      {% else %}
+                        <{{ codad.0 }} class="{{ codad.1 }}">{{ codad.2 }}</{{ codad.0 }}>
+                      {% endif %}
+                    {% endfor %}
+                  {% endspaceless %}
+                </p>
+                <br>
+                <button type="submit" class="btn btn-success position-relative">Salofen
+                </button>
+              </form>
+            </div>
 
             </div>
             

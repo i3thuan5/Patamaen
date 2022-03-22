@@ -11,7 +11,7 @@ def falic(request):
         form = MatamaForm(request.POST)
         # check whether it's valid:
         if form.is_valid():
-            sasalofen = form.sasalofen
+            sasalofen = form.cleaned_data['sasalofen']
 
     # if a GET (or any other method) we'll create a blank form
     else:
