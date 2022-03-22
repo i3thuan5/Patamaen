@@ -3,7 +3,7 @@ from .settings import INSTALLED_APPS
 
 ALLOWED_HOSTS = [
     # for docker selenium
-    'rime-gunicorn',
+    'patamaen-django',
 ]
 
 INSTALLED_APPS += [

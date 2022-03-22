@@ -20,7 +20,7 @@ def before_all(context):
 def django_ready(context, *args):
     # Hōo selenium docker liân-lâi āu-tâi (nginx tī kāng-khuán docker network)
     context.tsuki = context.test.live_server_url.replace(
-        '0.0.0.0', 'patamaen-gunicorn'
+        '0.0.0.0', 'patamaen-django'
     )
 
 
