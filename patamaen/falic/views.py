@@ -1,10 +1,12 @@
 from django.shortcuts import render
 import diff_match_patch as dmp_module
 import re
+from falic.forms import MatamaForm
 
 
 def falic(request):
     sasalofen = "nga'ay ho ,komaen kiso haw?"
+    form = MatamaForm()
     # 字首大寫
     # "Nga'ay ho, komaen kiso haw?"
     nisalofan = sasalofen[0].upper() + sasalofen[1:]
@@ -53,6 +55,7 @@ def falic(request):
         request,
         template_name='patamaen/falic.html',
         context={
+            'form': form,
             'sasalofen': sasalofen,
             'nisalofan': nisalofan,
         },
