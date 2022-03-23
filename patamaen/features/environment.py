@@ -10,7 +10,7 @@ def before_all(context):
 
 def after_step(context, step):
     context.browser.get_screenshot_as_file(
-        '/behave_steps/{}.png'.format(step)
+        'behave_steps/{}.png'.format(step)
     )
 
 
