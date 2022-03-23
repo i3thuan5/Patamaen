@@ -11,3 +11,4 @@ INSTALLED_APPS += [
 ]
 
 STATIC_ROOT = '/staticfiles/'
+STATIC_URL = '/static/'

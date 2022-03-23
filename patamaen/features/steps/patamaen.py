@@ -1,11 +1,9 @@
 from behave import when, then
 
-from time import sleep
-
 
 @when('Mitilid ko tamdaw {tilid}')
 def Mitilid(context, tilid):
-    context.browser.get(context.tsuki + '/falic')
+    context.browser.get(context.test.live_server_url + '/falic')
     context.browser.find_element_by_id('id_sasalofen').send_keys(tilid)
     context.browser.find_element_by_tag_name('button').click()
 
