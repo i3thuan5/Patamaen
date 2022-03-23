@@ -4,8 +4,11 @@ python:
 - '3.8'
 service:
 - docker
+env:
+  matrix:
+  - TOX_ENV=behave
+  - TOX_ENV=flake8
 install:
 - pip install tox
 script:
-- tox -e behave
-- tox -e flake8
+- tox -e ${TOX_ENV}
