@@ -9,4 +9,5 @@ install:
 script:
 - flake8 patamaen
 - docker-compose -f docker-compose-behave.yml up -d
+- cd patamaen
 - DJANGO_SETTINGS_MODULE=patamaen.settings-behave python manage.py behave
