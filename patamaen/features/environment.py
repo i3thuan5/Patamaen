@@ -13,15 +13,16 @@ from unittest.mock import patch
 def before_all(context):
     use_fixture(browser_chrome, context, timeout=10)
     # Kā django docker khui--khui
-    StaticLiveServerTestCase.host = '0.0.0.0'
+    # StaticLiveServerTestCase.host = '0.0.0.0'
     settings.STATIC_URL = '/static/'
 
 
 def django_ready(context, *args):
     # Hōo selenium docker liân-lâi āu-tâi (nginx tī kāng-khuán docker network)
-    context.tsuki = context.test.live_server_url.replace(
-        '0.0.0.0', 'patamaen-django'
-    )
+    context.tsuki = context.test.live_server_url
+    # .replace(
+    #     '0.0.0.0', 'patamaen-django'
+    # )
 
 
 def after_step(context, step):
@@ -34,7 +35,7 @@ def after_step(context, step):
 def browser_chrome(context, timeout=30, **kwargs):
     # -- SETUP-FIXTURE PART:
     context.browser = behave_webdriver.Remote(
-        command_executor='http://chrome-selenium:4444/wd/hub',
+        command_executor='http://localhost:4444/wd/hub',
         desired_capabilities=DesiredCapabilities.CHROME
     )
     context.browser.implicitly_wait(3)

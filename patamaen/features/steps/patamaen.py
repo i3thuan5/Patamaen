@@ -6,8 +6,8 @@ from time import sleep
 @when('Mitilid ko tamdaw {tilid}')
 def Mitilid(context, tilid):
     print(context.tsuki + '/falic')
+    sleep(10)
     context.browser.get(context.tsuki + '/falic')
-    sleep(100)
     context.browser.find_element_by_id('id_sasalofen').send_keys('tilid')
     context.browser.find_element_by_name('button').click()
 
