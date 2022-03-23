@@ -13,6 +13,6 @@ def Mitilid(context, tilid):
 @then("改 to {matamaay}")
 def 改(context, matamaay):
     context.test.assertEqual(
-        context.browser.find_element_by_id('masalofay').text(),
+        context.browser.find_element_by_id('masalofay').text,
         matamaay
     )
