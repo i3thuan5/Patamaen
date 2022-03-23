@@ -38,7 +38,7 @@ def browser_chrome(context, timeout=30, **kwargs):
         command_executor='http://localhost:4444/wd/hub',
         desired_capabilities=DesiredCapabilities.CHROME
     )
-    context.browser.implicitly_wait(3)
+    context.browser.implicitly_wait(30)
     yield
     # -- CLEANUP-FIXTURE PART:
     context.browser.quit()
