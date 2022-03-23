@@ -2,7 +2,11 @@ dist: focal
 language: python
 python:
 - '3.8'
+service:
+- docker
 install:
 - pip install flake8
 script:
 - flake8 patamaen
+- docker-compose -f docker-compose-behave.yml up -d
+- DJANGO_SETTINGS_MODULE=patamaen.settings-behave python manage.py behave
