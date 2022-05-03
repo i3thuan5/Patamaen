@@ -16,3 +16,7 @@ Scenario Outline: 句首大寫.
    Examples: 豆號前bē-sái空白
    | tilid                     | matamaay                  |
    | Ci Panay kako ,nga'ay ho? | Ci Panay kako, nga'ay ho? |
+
+   Examples: Ira ko space i 'ayaw no sakatosa a tilitilid.
+   | tilid                                 | matamaay                  |
+   | Nga'ay ho.o maan ko sakalafi no miso? | Nga'ay ho. O maan ko sakalafi no miso? |
