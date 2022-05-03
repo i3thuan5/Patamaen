@@ -24,7 +24,8 @@ def falic(request):
     nisalofan = nisalofan.replace(' ,', ',')
 
     # nisalofan = nisalofan.replace(',k', ', k')
-    nisalofan = re.sub('(,)([a-zA-Z])', pahanhanan, nisalofan)
+    nisalofan = re.sub('([,.?!])([a-zA-Z])', pahanhanan, nisalofan)
+    nisalofan = re.sub('[.?!] [a-z]', paherekan, nisalofan)
 
     dmp = dmp_module.diff_match_patch()
     diff = dmp.diff_main(sasalofen, nisalofan)
@@ -74,3 +75,7 @@ def falic(request):
 
 def pahanhanan(matama):
     return matama.group(1) + ' ' + matama.group(2)
+
+
+def paherekan(matama):
+    return matama.group(0).upper()
